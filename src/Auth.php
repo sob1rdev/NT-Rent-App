@@ -22,7 +22,7 @@ class Auth
 
         if (!$user) {
             $_SESSION['message']['error'] = "Wrong email or password";
-            redirect('/login');
+            redirect('/user/login');
             return;
         }
 
@@ -55,6 +55,6 @@ class Auth
         }
 
         $_SESSION['message']['error'] = "Wrong email or password";
-        redirect('/login');
+        redirect('/user/login');
     }
 }

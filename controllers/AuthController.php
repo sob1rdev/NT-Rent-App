@@ -40,7 +40,7 @@ class AuthController
     public function logout(): void
     {
         session_destroy();
-        redirect('/login');
+        redirect('/user/login');
         redirect('/');
     }
 

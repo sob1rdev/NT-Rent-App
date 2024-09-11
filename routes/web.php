@@ -47,7 +47,7 @@ Router::post('/status/create', fn() => loadController('createStatus'));
 
 // Users routes
 
-Router::get('/users/list', fn() => (new \Controller\UserController())->listUsers());
+Router::get('/user/lists', fn() => (new \Controller\UserController())->listUsers());
 
 Router::get('/user/update/{id}', fn(int $id) => (new UserController())->updateUser($id));
 Router::patch('/user/update/{id}', fn (int $id) => (new UserController())->editUser($id));
@@ -57,12 +57,12 @@ Router::get('/admin/create', fn () => loadView('auth/createUser'));
 Router::delete('/user/delete/{id}', fn(int $id) => (new UserController())->deleteUser($id));
 Router::get('/user/delete/{id}', fn(int $id) => (new UserController())->deleteUser($id));
 
-Router::get('/profile-setting', fn() => (new UserController())->profileSetting());
-Router::patch('/profile-setting', fn() => (new UserController())->accountSetting((new \App\Session())->getId()));
+Router::get('/profile/setting', fn() => (new UserController())->profileSetting());
+Router::patch('/profile/setting', fn() => (new UserController())->accountSetting());
 
 // Auth routes
-Router::get('/login', fn() => loadView('auth/login'), 'guest');
-Router::post('/login', fn() => (new \Controller\AuthController())->login());
+Router::get('/user/login', fn() => loadView('auth/login'), 'guest');
+Router::post('/user/login', fn() => (new \Controller\AuthController())->login());
 
 Router::get('/logout', fn() => (new \Controller\AuthController())->logout());
 
@@ -71,3 +71,7 @@ Router::get('/profile', fn() => (new \Controller\UserController())->loadProfile(
 
 Router::get('/register', fn() => loadView('auth/createUser'));
 Router::post('/register', fn() => (new \Controller\AuthController())->register());
+
+Router::get('/search', fn() => (new AdController())->search());
+
+Router::errorResponse(404, "Not Found");

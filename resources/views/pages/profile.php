@@ -40,7 +40,7 @@ loadPartials(path: 'header', loadFromPublic: false);
                 </li>
 
                 <li>
-                    <a href="/profile-setting"><i class="mdi mdi-account-edit me-2"> </i>Profil Sozlamalari</a>
+                    <a href="/profile/setting"><i class="mdi mdi-account-edit me-2"></i>Profil Sozlamalari</a>
                 </li>
 
                 <li class="sidebar-dropdown">
@@ -57,7 +57,7 @@ loadPartials(path: 'header', loadFromPublic: false);
                     <a href="javascript:void(0)"><i class="mdi mdi-login me-2"></i>Authentication</a>
                     <div class="sidebar-submenu">
                         <ul>
-                            <li><a href="/login">Login</a></li>
+                            <li><a href="/user/login">Login</a></li>
                             <li><a href="signup.html">Signup</a></li>
                             <li><a href="signup-success.html">Signup Success</a></li>
                             <li><a href="/logout">Chiqish</a></li>
@@ -271,7 +271,7 @@ loadPartials(path: 'header', loadFromPublic: false);
                                                     class="mdi mdi-chat-outline me-2"></i>Chat</a>
                                     </li>
                                     <li>
-                                        <a href="/profile-setting"
+                                        <a href="/profile/setting"
                                            class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                                     class="mdi mdi-cog-outline me-2"></i>Sozlamalar</a>
                                     </li>
@@ -378,14 +378,7 @@ loadPartials(path: 'header', loadFromPublic: false);
                                                 <p class="text-slate-400 mb-0">2nd March, 1996</p>
                                             </div>
                                         </div>
-                                        <div class="flex items-center mt-3">
-                                            <i data-feather="map-pin" class="fea icon-ex-md text-slate-400 me-3"></i>
-                                            <div class="flex-1">
-                                                <h6 class="text-green-600 dark:text-white font-medium mb-0">Location
-                                                    :</h6>
-                                                <a href="" class="text-slate-400">Beijing, China</a>
-                                            </div>
-                                        </div>
+
                                         <?php
                                         $userId = (new \App\Session())->getNumber();
                                         ?>
@@ -395,9 +388,6 @@ loadPartials(path: 'header', loadFromPublic: false);
                                             <div class="flex-1">
                                                 <h6 class="text-green-600 dark:text-white font-medium mb-0">Cell No :</h6>
                                                     <a href="" class="text-slate-400"><?= $userId[0]['phone']; ?></a>
-                                                <h6 class="text-green-600 dark:text-white font-medium mb-0">Cell No
-                                                    :</h6>
-                                                <a href="" class="text-slate-400">(+12) 1254-56-4896</a>
                                             </div>
                                         </div>
 

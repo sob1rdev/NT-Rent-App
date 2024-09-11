@@ -123,4 +123,11 @@ class AdController
         $ads->deleteAd($id);
         redirect('/profile');
     }
+
+    public function search(): void
+    {
+        $searchPhrase = $_REQUEST['search_phrase'];
+        $ads = (new \App\Ads())->search($searchPhrase);
+        loadView('home', ['ads' => $ads]);
+    }
 }

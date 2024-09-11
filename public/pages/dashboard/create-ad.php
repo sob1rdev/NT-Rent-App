@@ -209,7 +209,7 @@ if (in_array('create', $uri)) {
                                                     class="mdi mdi-chat-outline me-2"></i>Chat</a>
                                     </li>
                                     <li>
-                                        <a href="profile-setting.html"
+                                        <a href="/profile/setting"
                                            class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                                     class="mdi mdi-cog-outline me-2"></i>Settings</a>
                                     </li>
@@ -298,7 +298,7 @@ if (in_array('create', $uri)) {
 
                                         <div class="rounded-md shadow dark:shadow-gray-700 p-6 bg-white dark:bg-slate-900 h-fit" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                             <div class="form-icon relative mt-2">
-                                                <label for="branches" style="font-weight: 500;">Fillal</label>
+                                                <label for="branches" style="font-weight: 500;">Fillial</label>
                                                 <select name="branch_id" id="branches" class="font-medium" style="color: black; width: 100%;">
                                                     <?php foreach ($branches as $branch): ?>
                                                         <option class='form-input ps-11' value="<?= $branch->id ?>" <?= ($branch->id == $ad->branch_id) ? 'selected' : '' ?>>

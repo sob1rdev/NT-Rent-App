@@ -21,7 +21,7 @@ class Authentication
             }
         } elseif ($middleware === 'auth') {
             if (!(new Session())->getUser()) {
-                redirect('/login');
+                redirect('/user/login');
             }
         }
     }

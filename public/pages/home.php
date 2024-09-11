@@ -2,6 +2,10 @@
 
 loadPartials('header');
 loadPartials('navbar');
+/**
+ * @var $branches
+ * @var $ad
+ */
 ?>
     <!-- Start -->
     <section class="relative lg:py-24 py-16">
@@ -20,14 +24,14 @@ loadPartials('navbar');
 
                         <div id="StarterContent" class="p-6 bg-white dark:bg-slate-900 rounded-ss-none rounded-se-none md:rounded-se-xl rounded-xl shadow-md dark:shadow-gray-700">
                             <div class="" id="buy-home" role="tabpanel" aria-labelledby="buy-home-tab">
-                                <form action="#">
+                                <form action="/search" method="get">
                                     <div class="registration-form text-dark text-start">
                                         <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-0 gap-6">
                                             <div>
                                                 <label class="form-label font-medium text-slate-900 dark:text-white">Qidirish : <span class="text-red-600"></span></label>
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-search icons"></i>
-                                                    <input name="name" type="text" id="job-keyword" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Kalit so'zlarni kiriting: ">
+                                                    <input name="search_phrase" type="text" id="search_phrase" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Kalit so'zlarni kiriting: ">
                                                 </div>
                                             </div>
 
@@ -37,10 +41,11 @@ loadPartials('navbar');
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-estate icons"></i>
                                                     <select class="form-select z-2" data-trigger name="choices-catagory" id="choices-catagory-buy" aria-label="Default select example">
-                                                        <option>Houses</option>
-                                                        <option>Apartment</option>
-                                                        <option>Offices</option>
-                                                        <option>Townhome</option>
+                                                        <?php foreach ($branches as $branch): ?>
+                                                            <option class='form-input ps-11' value="<?= $branch->id ?>" <?= ($branch->id == $ad->branch_id) ? 'selected' : '' ?>>
+                                                                <?= ($branch->name) ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -103,10 +108,11 @@ loadPartials('navbar');
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-estate icons"></i>
                                                     <select class="form-select z-2" data-trigger name="choices-catagory" id="choices-catagory-sell" aria-label="Default select example">
-                                                        <option>Houses</option>
-                                                        <option>Apartment</option>
-                                                        <option>Offices</option>
-                                                        <option>Townhome</option>
+                                                        <?php foreach ($branches as $branch): ?>
+                                                        <option class='form-input ps-11' value="<?= $branch->id ?>" <?= ($branch->id == $ad->branch_id) ? 'selected' : '' ?>>
+                                                            <?= ($branch->name) ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>

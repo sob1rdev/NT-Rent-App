@@ -29,7 +29,7 @@ $isAdmin = $_SERVER['REQUEST_URI'] === '/admin/create';
     <div class="absolute inset-0 image-wrap z-1 bg-[url('../../assets/images/bg/01.jpg')] bg-no-repeat bg-center bg-cover"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black z-2" id="particles-snow"></div>
     <div class="container relative z-3">
-        <div class="flex justify-center">
+        <div class="flex-1 justify-center">
             <div class="max-w-[400px] w-full m-auto p-6 bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-700 rounded-md">
                 <a href="<?= $isAdmin ? '/admin/create' : '/register'; ?>"><img src="../../assets/images/logo-icon-64.png" class="mx-auto" alt="" ></a>
                 <h5 class="my-6 text-xl font-semibold"><?= $isAdmin ? 'Admin Signup' : 'Signup'; ?></h5>

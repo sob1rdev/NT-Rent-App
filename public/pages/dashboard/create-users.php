@@ -89,54 +89,39 @@ if (in_array('create', $uri)) {
 
         <!-- User Listings -->
         <section class="relative lg:py-24 py-16">
-            <div class="container relative">
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px]">
+            <div class="grid md:grid-cols-3 gap-5 mt-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                     <?php foreach ($users as $user): ?>
-                        <div class="relative group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
-                            <div class="p-6">
-                                <div class="flex justify-between items-center pb-6">
-                                    <a href="/users/update/<?=$user->id ?>" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500"><?=$user->username ?></a>
-                                    <div class="flex space-x-4">
-                                        <a href="/users/update/<?=$user->id ?>"
-                                           class="btn btn-icon bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600">
-                                            <i class="mdi mdi-pencil text-[20px]"></i>
+                        <div class="bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 p-6">
+                            <!-- User Information -->
+                            <div class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800">
+                                <img src="/assets/images/client/01.jpg" class="size-16 rounded-full shadow dark:shadow-gray-800" alt="User Image">
+                                <div class="ps-4">
+                                    <a href="#" class="text-lg hover:text-green-600 duration-500 ease-in-out">
+                                            <?= htmlspecialchars($user->username); ?>
                                         </a>
-                                        <a href="/users/delete/<?=$user->id ?>"
-                                           class="btn btn-icon bg-red-600 dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600">
-                                            <i class="mdi mdi-delete text-[20px]"></i>
-                                        </a>
-                                    </div>
+                                    <p class="text-slate-400"><?= htmlspecialchars($user->position); ?></p>
                                 </div>
-                                <ul class="pt-6 flex flex-col list-none">
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Username</span>
-                                        <p class="text-lg font-medium"><?=$user->username ?></p>
-                                    </li>
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Email</span>
-                                        <p class="text-lg font-medium"><?=$user->email ?></p>
-                                    </li>
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Position</span>
-                                        <p class="text-lg font-medium"><?=$user->position ?></p>
-                                    </li>
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Gender</span>
-                                        <p class="text-lg font-medium"><?=$user->gender ?></p>
-                                    </li>
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Phone</span>
-                                        <p class="text-lg font-medium"><?=$user->phone ?></p>
-                                    </li>
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Created At</span>
-                                        <p class="text-lg font-medium"><?=$user->created_at ?></p>
-                                    </li>
-                                    <li class="pb-2">
-                                        <span class="text-slate-400">Updated At</span>
-                                        <p class="text-lg font-medium"><?=$user->updated_at ?></p>
-                                    </li>
-                                </ul>
+                            </div>
+
+                            <!-- User Details -->
+                            <div class="mt-4 space-y-2">
+                                <div>
+                                    <p class="text-slate-400">Email</p>
+                                    <p class="text-lg font-medium"><?= htmlspecialchars($user->email); ?></p>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400">Phone</p>
+                                    <p class="text-lg font-medium"><?= htmlspecialchars($user->phone); ?></p>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400">Gender</p>
+                                    <p class="text-lg font-medium"><?= htmlspecialchars($user->gender); ?></p>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400">Ro'yxatdan o'tgan vaqti</p>
+                                    <p class="text-lg font-medium"><?= htmlspecialchars($user->created_at); ?></p>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>

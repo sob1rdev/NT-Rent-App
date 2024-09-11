@@ -22,7 +22,7 @@ loadPartials(path: 'header', loadFromPublic: false);
     <nav id="sidebar" class="sidebar-wrapper sidebar-dark">
         <div class="sidebar-content">
             <div class="sidebar-brand">
-                <a href="index.html"><img src="dashboard/assets/images/logo-light.png" alt=""></a>
+                <a href="/"><img src="dashboard/assets/images/logo-light.png" alt=""></a>
             </div>
 
             <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
@@ -93,8 +93,8 @@ loadPartials(path: 'header', loadFromPublic: false);
                     <a href="javascript:void(0)"><i class="mdi mdi-login me-2"></i>Authentication</a>
                     <div class="sidebar-submenu">
                         <ul>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="signup.html">Signup</a></li>
+                            <li><a href="/user/login/">Login</a></li>
+                            <li><a href="/register">Signup</a></li>
                             <li><a href="signup-success.html">Signup Success</a></li>
                             <li><a href="reset-password.html">Reset Password</a></li>
                             <li><a href="lock-screen.html">Lockscreen</a></li>
@@ -320,7 +320,7 @@ loadPartials(path: 'header', loadFromPublic: false);
                                                 class="mdi mdi-chat-outline me-2"></i>Chat</a>
                                 </li>
                                 <li>
-                                    <a href="/profile-setting"
+                                    <a href="/profile/setting"
                                        class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                                 class="mdi mdi-cog-outline me-2"></i>Sozlamalar</a>
                                 </li>
